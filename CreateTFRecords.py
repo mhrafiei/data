@@ -14,7 +14,7 @@ def _int64_feature(value):
 def create_tfrecords_from_directory(directory, base_record_name, target_size=24*1024*1024):
     current_size = 0
     file_count = 1
-    writer = tf.io.TFRecordWriter(f"{base_record_name}_{file_count}.tfrecord")
+    writer = tf.io.TFRecordWriter("{}_{:03d}.tfrecord".format(base_record_name, file_count))
 
     for folder_name in ["cracked", "noncracked"]:
         class_path = os.path.join(directory, folder_name)
