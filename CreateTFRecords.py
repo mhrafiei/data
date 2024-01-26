@@ -40,7 +40,7 @@ def create_tfrecords_from_directory(directory, base_record_name, target_size=24*
             if current_size + size_of_example > target_size:
                 writer.close()  # Close the current TFRecord file
                 file_count += 1  # Increment file count
-                writer = tf.io.TFRecordWriter(f"{base_record_name}_{file_count}.tfrecord")  # Start a new file
+                writer = tf.io.TFRecordWriter("{}_{:03d}.tfrecord".format(base_record_name, file_count))  # Start a new file
                 current_size = 0  # Reset current size
 
             writer.write(example)
