@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ml anaconda 
+
 # Create a new conda environment with Python 3.10
 conda create -n 535743_tf Python=3.10 -y
 
